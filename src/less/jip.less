@@ -1,0 +1,146 @@
+/*---------------------------------------------------
+    JIP
+    Jquery Image PIcker
+  --------------------------------------------------*/
+
+
+@import "elements.less";
+
+.clearfix::before, .clearfix::after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+
+/*---------------------------------------------------
+    JIP Modal 
+  --------------------------------------------------*/
+
+#jipOverlay{
+	display: none;
+	position: fixed;
+	top:0px;
+	left: 0px;
+	background: #000 ;
+    height:100%;
+    width: 100%;
+    z-index: 9000;
+    .opacity(0.8);
+    .user-select(none);
+    &.open{
+    	display:block;
+    }
+}
+
+#jipModal{
+	display:none;
+	width: 75%;
+	margin-left: 13%;
+	background: #fff;
+	top: -150px;
+	position: fixed;
+	z-index: 9050;
+	padding: 20px;
+	max-height: 80%;
+	overflow: hidden;
+	.drop-shadow(0, 1px, 2px, 0.2);
+	.border-radius(10px,10px,10px,10px);
+	.opacity(0.1);
+	.user-select(none);
+
+
+	&.open{
+		display:block;
+		.translate(0px,200px);
+		.opacity(1);
+		.transition-duration(.3s);
+	}
+	&.hide{
+		.translate(0px,-200px);
+		.opacity(0.1);
+		.transition-duration(.3s);
+	}
+
+	#jipTitle{
+		border-bottom: 1px #ccc solid;
+			h3{
+			margin: 0px;
+			padding:0px;
+			float:left;		
+			}
+			form{
+				margin-top: 5px;
+				float:right;
+
+				label{
+					float:left;
+					margin-right: 5px;
+					margin-top: 5px;
+				}
+
+			}
+	}
+
+	#jipBody{
+		max-height: 500px;
+		overflow: auto;
+		ul{
+			margin:20px 0px;
+			padding:0px;
+
+			li{
+				list-style: none;
+				float:left;
+				padding: 5px;
+				display:inline-block;
+				&:hover{
+					background: #eee;
+				}
+				p{
+					text-align: center;
+					padding:5px 0px ;
+				}
+			}
+		}
+	}
+
+	#jipFooter{
+		margin-top: 15px;
+		border-top:1px #ccc solid;
+		#jipPaging{
+			float:left;
+			li{
+				padding-right:10px;
+			}
+		}
+		#jipAction{
+			float:right;
+			li{
+				padding-left: 10px;
+			}
+		}
+		ul{
+			margin:0px;
+			padding:0px;
+			li{
+				list-style: none;
+				float:left;;
+				button{
+					.border-radius(5px,5px,5px,5px);
+					.gradient(#F5F5F5, #ccc, #FFF);
+					.bordered(#EEE, #E5E5E5, #DDD, #E5E5E5);
+					&:hover{
+						.gradient(#ccc, #fff, #ccc);
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+/*---------------------------------------------------
+    JIP input replacement
+  --------------------------------------------------*/
+

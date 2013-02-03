@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Jip :: Jquery Image Picker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../src/css/jip.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+   <form>
+
+      <p>Base Input Example</p>
+
+      <input type="text" name="example1" id="example1">
+
+    </form>
+
+
+    </div> <!-- /container -->
+
+    <div id="jipOverlay">&nbsp;</div>
+    <div id="jipModal">
+      <!-- start header -->
+      <div id="jipTitle">
+        <h3>{{title}}</h3>
+        <form>
+          <label for="jipFolderSelect">Change Folder</label>
+          <select id="jipFolderSelect">
+            <option value='/url/main'>Main</option>
+            <option value='/url/avatar'>Avatar</option>
+          </select>
+        </form>
+        <div class="clearfix">&nbsp;</div>
+      </div>
+      <!-- end Header -->
+
+      <!-- start modal body -->
+      <div id="jipBody">
+        <ul>
+
+        </ul>
+      </div>
+      <!-- end modal body -->
+      <!-- start footer -->
+      <div id="jipFooter">
+        <div class="clearfix">&nbsp;</div>
+        <div id="jipPaging">
+          <ul>
+            <li> <button id="jipPrev"> Previous</button> </li>
+            <li> <button id="jipNext"> Next</button> </li>
+          </ul>
+        </div>
+        <div id="jipAction">
+          <ul>
+            <li> <button id="jipCancle"> Cancel</button> </li>
+            <li> <button id="jipSave"> Save</button> </li>
+          </ul>
+        </div>
+        <div class="clearfix">&nbsp;</div>
+      </div>
+      <!-- end jip footer -->
+      <div>
+
+    </div>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+    
+    function getRandomInt (min, max) {
+     return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var $jip = $("#jipModal #jipBody ul");
+
+
+    for (var i = 0; i <= 8; i++) {
+      var num1 = getRandomInt(100, 500);
+      var num2 = getRandomInt(100, 500);
+
+      var imgUrl = "http://placehold.it/"+ num1 +"x"+ num2;
+      var title = num1 +"x"+ num2;
+
+      var strVar="";
+      strVar += "<li>";
+      strVar += "<img src=\""+imgUrl+"\" \/>";
+      strVar += "<p>"+title+"<\/p>";
+      strVar += "<\/li>";
+
+      // $jip.append(strVar);
+
+
+    };
+
+
+  
+  });
+
+  </script>
+
+
+  </body>
+</html>
