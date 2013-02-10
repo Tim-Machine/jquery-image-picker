@@ -144,3 +144,30 @@
     JIP input replacement
   --------------------------------------------------*/
 
+.jipSelector{
+
+	.jipPlaceHolder{
+		background: #ddd;
+		border:1px #333 solid;
+		display:table;
+		.drop-shadow(0, 1px, 2px, 0.2);
+		.rounded(5px);
+		img{
+			padding:10px;
+		}
+		.jipImageName{
+			color:#000;
+			text-align: center;
+			padding-bottom:10px;
+		}
+	}
+	.jipSelectBtn{
+		margin-top:10px;
+		.border-radius(5px,5px,5px,5px);
+		.gradient(#F5F5F5, #ccc, #FFF);
+		.bordered(#EEE, #E5E5E5, #DDD, #E5E5E5);
+		&:hover{
+			.gradient(#ccc, #fff, #ccc);
+		}
+	}
+}
